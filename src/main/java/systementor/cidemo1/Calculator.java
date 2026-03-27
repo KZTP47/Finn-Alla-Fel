@@ -1,6 +1,6 @@
 package systementor.cidemo1;
 
-//public class Calculator {
+public class Calculator {//denna var bortkommenterade, vilket gjorde att vi fick: class, interface, enum, or record expected, vilket är Java's way of saying att den fann code (mina methods) som inte var i en class.
 
     public int add(int a, int b) {
         return a + b + 4;

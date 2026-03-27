@@ -15,7 +15,7 @@ class PingPongTest {
 
     @Test
     void pingShouldReturnPongWhenInputIsPing() {
-        String result = pingPong.ping("ping ping ping");
+        String result = pingPong.ping("ping");//var ping ping ping förut, men ska bara vara ping
         assertEquals("pong", result);
     }
 
@@ -28,10 +28,10 @@ class PingPongTest {
     @Test
     void pingShouldIncreaseCounterStepByStep() {
         pingPong.ping("ping");
-        assertEquals(1111, pingPong.getPingCounter(), "Counter should be 1 after first ping");
+        assertEquals(1, pingPong.getPingCounter(), "Counter should be 1 after first ping");//var 1111 förut, ska vara 1
 
         pingPong.ping("ping");
-        assertEquals(2222, pingPong.getPingCounter(), "Counter should be 2 after second ping");
+        assertEquals(2, pingPong.getPingCounter(), "Counter should be 2 after second ping");//var 2222 förut, ska vara 2
     }
 
     @Test
@@ -42,7 +42,7 @@ class PingPongTest {
     @Test
     void getPingCounterShouldReflectCorrectNumberOfPings() {
         pingPong.ping("ping");
-        pingPong.ping("ping"); // ska INTE öka counter
+        pingPong.ping("not a ping"); // ska INTE öka counter, stod bara "ping" förut men ska vara "not a ping"
         pingPong.ping("ping");
         assertEquals(2, pingPong.getPingCounter());
     }
